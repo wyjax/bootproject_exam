@@ -51,18 +51,18 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" href="#">Logo</a>
+      <a class="navbar-brand" href="/">Logo</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Home</a></li>
-        <li><a href="/freeboard">자유게시판</a></li>
-        <li><a href="#">Projects</a></li>
-        <li><a href="#">Contact</a></li>
+        <li class="active"><a href="/">Home</a></li>
+        <li><a href="/freeboard">Freeboard</a></li>
+        <!-- <li><a href="#">Projects</a></li>
+        <li><a href="#">Contact</a></li> -->
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li th:if="${session.loginUser != null}"><a href="/logOut"><span class="glyphicon glyphicon-log-in"></span> LogOut</a></li>
-        <li th:if="${session.loginUser == null}"><a href="loginPage"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        <li th:if="${session.loginUser == null}"><a href="/loginPage"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
         <li th:if="${session.loginUser == null}"><a href="/joinPage"><span class="glyphicon glyphicon-log-in"></span> Join</a></li>
       </ul>
     </div>
@@ -76,17 +76,26 @@
       <p><a href="#">Link</a></p>
       <p><a href="#">Link</a></p>
     </div>
-    <div class="col-sm-8 text-left">
-	    <h1>Join</h1> 
-		<form action="http://localhost:8080/joinRequest" method="post">
-			아이디 : <input type="text" name="userId">
-			<br><br>
-			비밀번호 : <input type="password" name="userPw">
-			<br><br>
-			이름 : <input type="text" name="userName">
-			<br><br>
-			<input type="submit" value="가입하기">	
-		</form>
+    <div class="col-sm-8 text-left"> 
+		<h4>자유게시판</h4>
+		<table>
+			<thead>
+				<tr>
+					<th>글 번호</th>
+					<th>글 제목</th>
+					<th>작성자</th>
+				</tr>
+				<th:block th:if="${session.boardList != null}">
+					<th:block th:if="board:${session.boardList}">
+						<tr>
+							<td><span th:text="${board.getFreeid()}"></span></td>
+							<td><span th:text="${board.getTitle()}"></span></td>
+							<td><span th:text="${board.getWriter()}"></span></td>
+						</tr>
+					</th:block>
+				</th:block>
+			</thead>
+		</table>
     </div>
     <div class="col-sm-2 sidenav">
       <div class="well">

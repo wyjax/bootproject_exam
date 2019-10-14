@@ -1,14 +1,15 @@
 package com.example.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class MainController {
-	// ¸ÞÀÎ ÄÁÆ®·Ñ·¯´Â ÆäÀÌÁö¸¦ ³Ñ°ÜÁÖ´Â ¿ªÇÒÀ» ÇÑ´Ù.
+	// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Æ®ï¿½Ñ·ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ñ°ï¿½ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ñ´ï¿½.
 	/*
 	 * 
-	 * getmapping postmapping µîµî ´Ù¾çÇÑ ¹æ¹ýÀÌ ÀÖÀ½
+	 * getmapping postmapping ï¿½ï¿½ï¿½ ï¿½Ù¾ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	 */
 
 	@RequestMapping(value = "/")
